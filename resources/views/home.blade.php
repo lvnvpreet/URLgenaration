@@ -36,4 +36,6 @@
 <h3>
     {{URL::previous()}}
 </h3>
+
+<a href="lovepreet/visit">Visit Me</a>
 </center>

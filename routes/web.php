@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\nameRouteController;
 
+use App\Http\Controllers\routeGroup;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -26,3 +28,18 @@ Route::get('show',[nameRouteController::class,'show']);
 
 Route::get('user',[nameRouteController::class,'user']);
 
+
+Route::view('lovepreet/visit','route-Group');
+
+// Route::get('lovepreet/mobile',[routeGroup::class,'mobile']);
+// Route::get('lovepreet/mail-id',[routeGroup::class,'mailId']);
+// Route::get('lovepreet/address',[routeGroup::class,'address']);
+
+// using grouping
+
+Route::prefix('lovepreet')->group(function(){
+   
+    Route::get('/mobile',[routeGroup::class,'mobile']);
+    Route::get('/mail-id',[routeGroup::class,'mailId']);
+    Route::get('/address',[routeGroup::class,'address']);
+});
